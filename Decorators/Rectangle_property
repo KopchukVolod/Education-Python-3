@@ -1,0 +1,34 @@
+class Rectangle:
+    def __init__(self, width, height):
+        self._width = width
+        self._height = height
+        
+    @property
+    def width(self):
+        return self._width
+        
+    @width.setter
+    def width(self, value):
+        if value <= 0:
+            raise ValueError("Must be positive width")
+        self._width = value
+        
+    @property
+    def height(self):
+        return self._height
+    
+    @height.setter
+    def height(self, value):
+        if value <= 0:
+            raise ValueError("Must be positive height")
+        self._width = value
+        
+    def area(self):
+        return self._width * self._height
+
+my_rectangle = Rectangle(110, 40)
+print(my_rectangle.width)  # виводить 3
+my_rectangle.width = 5
+print(my_rectangle.width)  # виводить 5
+print(my_rectangle.area)
+
